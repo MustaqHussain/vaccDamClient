@@ -1,0 +1,158 @@
+<div class='card'>
+  {{message}}
+  <div class='card-header'>
+    Claim: Vac No: {{claim.vacNo}}
+  </div>
+
+  <div class='card-body'>
+    <div id="accordion">
+
+      <div class="card">
+        <div class="card-header" id="vaccinatedPersonHeading">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+              aria-controls="collapseOne">
+              Vaccinated Person
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="vaccinatedPersonHeading" data-parent="#vaccinatedPersonHeading">
+          <div class="card-body">
+
+              <!-- <div class='container'>
+            <div class="form-group row">
+              <label class="control-label col-sm-2">NINO:</label>
+              <div class="col-sm-10">{{claim.vaccinatedPersonDetails.nino}}</div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2">Title</label>
+              <div class="col-sm-2">
+                <select name="title" [(ngModel)]="claim.vaccinatedPersonDetails.title" class="form-control full autocompleter">
+                  <option *ngFor="let item of titles" [ngValue]="item.description">{{item.description}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2">Forename:</label>
+              <div class="col-sm-10">
+                <input class="form-control" name="forename" [(ngModel)]="claim.vaccinatedPersonDetails.forename" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2">Surname:</label>
+              <div class="col-sm-10">
+                <input class="form-control" name="surname" [(ngModel)]="claim.vaccinatedPersonDetails.surname" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2">Address:</label>
+              <div class="col-sm-10">
+                
+                <textarea class="form-control" rows="4" name="address" [(ngModel)]="claim.vaccinatedPersonDetails.address"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2">Postcode:</label>
+              <div class="col-sm-4">
+                <input class="form-control" name="postcode" [(ngModel)]="claim.vaccinatedPersonDetails.postcode" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2">Tel No:</label>
+              <div class="col-sm-4">
+                <input class="form-control" name="telNo" [(ngModel)]="claim.telNo" />
+              </div>
+            </div>
+
+              </div> -->
+              <app-claim-detail-vaccinated-person [claim]="claim" [titles]="titles"></app-claim-detail-vaccinated-person>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="claimantHeading">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+              aria-controls="collapseTwo">
+              Claimant
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="claimantHeading" data-parent="#claimantHeading">
+          <div class="card-body">
+
+              <!-- <div class='container'>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+            wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+            you probably haven't heard of them accusamus labore sustainable VHS.
+              </div> -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="vaccinationsHeading">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+              aria-controls="collapseThree">
+              Vaccinations
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="vaccinationsHeading" data-parent="#vaccinationsHeading">
+          <div class="card-body">
+
+            <app-claim-detail-vaccinations [claim]="claim" [titles]="titles"></app-claim-detail-vaccinations>
+            <!-- <div class='container'>
+              <table class="table table-striped table-bordered">
+                <tr>
+                  <th>Type</th>
+                  <th>Age</th>
+                  <th>Country</th>
+                </tr>
+                <tr *ngFor="let clai of claim.vaccinations">
+                  <td>{{clai.type}}</td>
+                  <td>{{clai.age}}</td>
+                  <td>{{clai.country}}</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="tr">
+                      <select name="title" [(ngModel)]="claim.vaccinatedPersonDetails.title" class="form-control full autocompleter">
+                        <option *ngFor="let item of titles" [ngValue]="item.description">{{item.description}}</option>
+                      </select>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="tr">
+                      <div class="col-sm-10">
+                        <input class="form-control" name="surname" [(ngModel)]="claim.vaccinatedPersonDetails.surname" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+              </table>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

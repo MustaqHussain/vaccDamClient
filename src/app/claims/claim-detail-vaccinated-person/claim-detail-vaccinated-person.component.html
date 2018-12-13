@@ -1,0 +1,69 @@
+<div class='container'>
+    <div class="form-group row">
+      <label class="control-label col-sm-2">NINO:</label>
+      <div class="col-sm-10">{{claim.vaccinatedPersonDetails.nino}}</div>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-sm-2">Title:</label>
+      <div class="col-sm-2">
+        <select name="title" [(ngModel)]="claim.vaccinatedPersonDetails.title" class="form-control full autocompleter">
+          <option *ngFor="let item of titles" [ngValue]="item.description">{{item.description}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-sm-2">Forename:</label>
+      <div class="col-sm-10">
+        <input class="form-control" name="forename" [(ngModel)]="claim.vaccinatedPersonDetails.forename" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-sm-2">Surname:</label>
+      <div class="col-sm-10">
+        <input class="form-control" name="surname" [(ngModel)]="claim.vaccinatedPersonDetails.surname" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-sm-2">Address:</label>
+      <div class="col-sm-10">
+        <!-- <textarea class="form-control" name="address" [(ngModel)]="claim.address" /> -->
+        <textarea class="form-control" rows="4" name="address" [(ngModel)]="claim.vaccinatedPersonDetails.address"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-sm-2">Postcode:</label>
+      <div class="col-sm-4">
+        <input class="form-control" name="postcode" [(ngModel)]="claim.vaccinatedPersonDetails.postcode" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-sm-2">Tel No:</label>
+      <div class="col-sm-4">
+        <input class="form-control" name="telNo" [(ngModel)]="claim.vaccinatedPersonDetails.telNo" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-sm-2">Date Of Birth:</label>
+        <div class="col-sm-10">
+            <input matInput [matDatepicker]="pickerDOB" [(ngModel)]="claim.vaccinatedPersonDetails.dateOfBirth" />
+            <mat-datepicker-toggle matSuffix [for]="pickerDOB"></mat-datepicker-toggle>
+            <mat-datepicker #pickerDOB></mat-datepicker> 
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-sm-2">Date Of Death:</label>
+        <div class="col-sm-10">
+            <input matInput [matDatepicker]="pickerDOD" [(ngModel)]="claim.vaccinatedPersonDetails.dateOfDeath" />
+            <mat-datepicker-toggle matSuffix [for]="pickerDOD"></mat-datepicker-toggle>
+            <mat-datepicker #pickerDOD></mat-datepicker> 
+        </div>
+    </div>
+
+  </div>

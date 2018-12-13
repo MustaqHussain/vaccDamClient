@@ -1,0 +1,83 @@
+<div class='container'>
+  <div class='card'>
+    <div class='card-header'>
+      Claims List
+    </div>
+    <div class='card-body'>
+
+      <div class='row'>
+
+        <div class='col-md-2'>
+
+            <div class='row'><br/>
+            </div>
+            <div class='row'>
+                <div>
+                  Vac No<input class= 'col-sm-6 float-right' type='text' [(ngModel)]='vacNoFilter' />
+                </div>
+              </div>
+        </div>
+
+        <div class='col-md-5'>
+          <div class='row'>
+            Vaccinated Person:
+          </div>
+          <div class='row'>
+            <div class="col-10">
+              NINO <input type='text' class='float-right' [(ngModel)]='vaccinatedNinoFilter' />
+            </div>
+          </div>
+          <div class='row'>
+            <div class="col-10">
+              Surname <input type='text' class='float-right' [(ngModel)]='vaccinatedSurnameFilter' />
+            </div>
+          </div>
+        </div>
+
+        <div class='col-md-5'>
+            <div class='row'>
+              Claimant:
+            </div>
+            <div class='row'>
+              <div class="col-10">
+                NINO <input type='text' class='float-right' [(ngModel)]='claimantNinoFilter' />
+              </div>
+            </div>
+            <div class='row'>
+              <div class="col-10">
+                Surname <input type='text' class='float-right' [(ngModel)]='claimantSurnameFilter' />
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <div>
+        <button type="button" class="btn" (click)='searchForClaim()'>Search</button>
+      </div>
+      <br />
+
+      <div class='container'>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Vac No</th>
+            <th>Vaccinated NINO</th>
+            <th>Forename</th>
+            <th>Surname</th>
+            <th>Claimant NINO</th>
+            <th>Forename</th>
+            <th>Surname</th>
+          </tr>
+          <tr *ngFor="let claim of claims">
+            <td><a [routerLink]="['/claims', claim.vacNo]">{{claim.vacNo}}</a></td>
+            <td>{{claim.vaccinatedPersonDetails.nino}}</td>
+            <td>{{claim.vaccinatedPersonDetails.forename}}</td>
+            <td>{{claim.vaccinatedPersonDetails.surname}}</td>
+            <td>{{claim.claimantDetails.nino}}</td>
+            <td>{{claim.claimantDetails.forename}}</td>
+            <td>{{claim.claimantDetails.surname}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
